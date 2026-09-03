@@ -1,0 +1,136 @@
+/* ==========================================================================
+   1. الإعدادات العامة والخطوط (Reset & Typography)
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Fira Code', 'Courier New', Courier, monospace; /* مظهر كود كلاسيكي متناسق */
+}
+
+body {
+  background-color: #282828; /* لون الخلفية العام لثيم Gruvbox */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* الحاوية الخارجية للحاسبة */
+.calculator-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ==========================================================================
+   2. جسم الحاسبة وشاشة العرض (Calculator Body & Display)
+   ========================================================================== */
+.calculator {
+  background-color: #1d2021; /* لون جسم الحاسبة الداكن */
+  padding: 24px;
+  border-radius: 20px;
+  box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.6);
+  width: 340px;
+  border: 2px solid #3c3836;
+}
+
+.display {
+  background-color: #32302f; /* خلفية الشاشة */
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  text-align: right;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  word-break: break-all;
+  border: 1px solid #504945;
+}
+
+/* نص العملية الجارية */
+.input-screen {
+  color: #a89984; /* رمادي هادئ للعملية */
+  font-size: 1.25rem;
+  min-height: 1.5rem;
+}
+
+/* نص نتيجة الحساب الكبيرة */
+.result-screen {
+  color: #fbf1c7; /* لون عاجي فاتح للنتيجة */
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1.1;
+}
+
+/* ==========================================================================
+   3. شبكة الأزرار وتصميم المفاتيح (Grid & Buttons)
+   ========================================================================== */
+.buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 أعمدة متساوية */
+  gap: 14px;
+}
+
+/* الأزرار العادية (الأرقام والنقطة والأقواس) */
+.btn {
+  background-color: #3c3836; /* لون أزرار الأرقام */
+  border: none;
+  padding: 18px 0;
+  border-radius: 12px;
+  color: #ebdbb2; /* لون النص الأساسي */
+  font-size: 1.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.05s ease;
+  box-shadow: 0 4px 0 #282828;
+}
+
+.btn:hover {
+  background-color: #504945;
+}
+
+.btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #282828;
+}
+
+/* ==========================================================================
+   4. التنسيقات المخصصة للأزرار الخاصة (Special Button Themes)
+   ========================================================================== */
+
+/* أزرار الحذف والمسح C و DEL (أحمر Gruvbox) */
+.clear-btn {
+  background-color: #cc241d;
+  color: #fbf1c7;
+}
+.clear-btn:hover {
+  background-color: #fb4934;
+}
+
+/* أزرار العمليات الحسابية الأساسية والمضروب (برتقالي Gruvbox) */
+.operator-btn {
+  background-color: #d65d0e;
+  color: #fbf1c7;
+}
+.operator-btn:hover {
+  background-color: #fe8019;
+}
+
+/* زر اليساوي الممتد لصفين عموديين (أخضر Gruvbox) */
+.equal-btn {
+  grid-row: span 2;
+  background-color: #b8bb26;
+  color: #282828; /* نص داكن لتباين مثالي وقراءة مريحة */
+  height: 100%; /* ليمتد ويملأ الفراغ بالكامل */
+}
+.equal-btn:hover {
+  background-color: #8ec07c;
+}
+
+/* ضبط زر الصفر في السطر الأخير ليأخذ 3 مساحات عرضية لملء الفراغ بجانب زر يساوي */
+.btn:last-child {
+  grid-column: span 3;
+}

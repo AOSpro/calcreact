@@ -1,14 +1,13 @@
 //Start:🕒 2026-09-03 Thursday 15:34:21
 //Owner:🔧 AOSpro
 //Call: 📞 t.me/aospro
-//Project: 📌
+//Project: calc📌
 
 
 import React from 'react';
 import * as constants from './consts';
 import Button from './button';
 
-// تحديد نوع الـ Props المستقبلة (الدالة التي تعالج الضغط على الأزرار)
 interface GridProps {
   onButtonClick: (value: string) => void;
 }

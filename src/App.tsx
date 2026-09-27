@@ -5,9 +5,7 @@ import Grid from './comp/grid';
 import { useResult } from './comp/useResult';
 
 const App: React.FC = () => {
-    // استخراج الحالة والدالة مباشرة من الـ Hook
     const { input, result, handleClick } = useResult();
-
     return (
         <div className="calculator-container">
             <div className="calculator">

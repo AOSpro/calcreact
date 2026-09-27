@@ -1,7 +1,7 @@
 //Start:🕒 2026-09-03 Thursday 15:34:21
 //Owner:🔧 AOSpro
 //Call: 📞 t.me/aospro
-//Project: 📌
+//Project: calc 📌
 
 export const BUTTONS: string[] = [
   'C', 'DEL', '(', ')',

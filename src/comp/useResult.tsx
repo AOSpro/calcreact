@@ -1,7 +1,7 @@
 //Start:🕒 2026-09-03 Thursday 15:34:21
 //Owner:🔧 AOSpro
 //Call: 📞 t.me/aospro
-//Project: 📌
+//Project: calc📌
 
 import { useState } from 'react';
 import * as constants from './consts';
@@ -15,7 +15,6 @@ export const useResult = () => {
   const handleClick = (value: string): void => {
     const lastChar = input.slice(-1);
 
-    // 1. عند الضغط على يساوي (=)
     if (value === '=') {
       if (input.trim() === '' || constants.OPERATORS.includes(lastChar)) return;
 
@@ -25,7 +24,6 @@ export const useResult = () => {
       return;
     }
 
-    // 2. عند الضغط على مسح الكل (C)
     if (value === 'C') {
       setInput('');
       setResult('');
@@ -33,7 +31,6 @@ export const useResult = () => {
       return;
     }
 
-    // 3. عند الضغط على حذف آخر خانة (DEL)
     if (value === 'DEL') {
       if (isCalculated) {
         setInput('');
@@ -45,7 +42,6 @@ export const useResult = () => {
       return;
     }
 
-    // 4. التعامل مع العمليات الحسابية (+, -, *, /)
     if (constants.OPERATORS.includes(value)) {
       if (input === '' && value !== '-') return;
 
@@ -62,7 +58,6 @@ export const useResult = () => {
       return;
     }
 
-    // 5. التعامل مع الأقواس ( )
     if (value === '(' || value === ')') {
       if (isCalculated) {
         setInput(value);
@@ -74,7 +69,6 @@ export const useResult = () => {
       return;
     }
 
-    // 6. التعامل مع النقطة العشرية (.)
     if (value === '.') {
       if (isCalculated) {
         setInput('0.');
@@ -91,7 +85,6 @@ export const useResult = () => {
       return;
     }
 
-    // 7. التعامل مع منطق المضروب (!)
     if (value === '!') {
       if (input === '' || constants.OPERATORS.includes(lastChar) || lastChar === '!' || lastChar === '.' || lastChar === '(') return;
 
@@ -106,7 +99,6 @@ export const useResult = () => {
       return;
     }
 
-    // 8. التعامل مع الأرقام (0-9)
     if (isCalculated) {
       setInput(value);
       setResult('');
@@ -117,7 +109,6 @@ export const useResult = () => {
     }
   };
 
-  // إرجاع الحالات والدالة لربطها بالواجهة
   return {
     input,
     result,
